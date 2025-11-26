@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
-#comment
-awk '{count[$1" "$9]++} END {for (pair in count) print count[pair], pair}' apache-access.log | sort -rn
+# Group visitors by IP and HTTP code, sorted by occurrences
+awk 'NF>=9 {count[$1" "$9]++} END {for (pair in count) print count[pair], pair}' apache-access.log | sort -rn
