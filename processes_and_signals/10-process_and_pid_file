@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # This script prints a message indefinitely and handles signals
 PIDFILE="/tmp/myscript.pid"
 echo $$ > "$PIDFILE"
