@@ -1,9 +1,10 @@
-#!/usr/bin/env bash
+#!/bin/bash
 # This script prints a message indefinitely and handles signals
-echo $$ > /var/run/myscript.pid
+PIDFILE="/tmp/myscript.pid"
+echo $$ > "$PIDFILE"
 trap 'echo "I hate the kill command"' SIGTERM
 trap 'echo "Y U no love me?!"' SIGINT
-trap 'rm -f /var/run/myscript.pid; exit 0' SIGQUIT SIGTERM
+trap 'rm -f "$PIDFILE"; exit 0' SIGQUIT SIGTER
 while true; do
     echo "To infinity and beyond indefinitely"
     sleep 2
