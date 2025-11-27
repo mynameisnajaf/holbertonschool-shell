@@ -1,0 +1,4 @@
+#!/bin/bash
+#Listing all Bash processes
+# shellcheck disable=SC2009
+ps aux | grep '[b]ash'
